@@ -1,5 +1,5 @@
 {
-  "name": "@wixc3/resolve-directory-context",
+  "name": "@dazl/resolve-directory-context",
   "description": "Helpers to get information about single/multi-package contexts",
   "version": "5.0.1",
   "type": "module",

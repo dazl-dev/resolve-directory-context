@@ -1,6 +1,6 @@
-# @wixc3/resolve-directory-context
+# @dazl/resolve-directory-context
 
-[![npm version](https://badge.fury.io/js/%40wixc3%2Fresolve-directory-context.svg)](https://badge.fury.io/js/%40wixc3%2Fresolve-directory-context)
+[![npm version](https://badge.fury.io/js/%40dazl%2Fresolve-directory-context.svg)](https://badge.fury.io/js/%40dazl%2Fresolve-directory-context)
 
 Helpers to get information about single/multi-package contexts.
 
@@ -19,7 +19,7 @@ Supports:
 ```ts
 import fs from 'fs';
 import path from 'path';
-import { resolveDirectoryContext } from '@wixc3/resolve-directory-context';
+import { resolveDirectoryContext } from '@dazl/resolve-directory-context';
 
 const context = resolveDirectoryContext(basePath, { ...fs, ...path });
 if (context.type === 'multi') {
