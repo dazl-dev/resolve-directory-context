@@ -25,7 +25,7 @@
   "devDependencies": {
     "@file-services/memory": "^11.0.1",
     "@file-services/path": "^11.0.1",
-    "@playwright/browser-chromium": "^1.55.1",
+    "@playwright/browser-chromium": "^1.56.0",
     "@ts-tools/esm": "^6.1.0",
     "@types/chai": "^5.2.2",
     "@types/mocha": "^10.0.10",
