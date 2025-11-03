@@ -31,7 +31,7 @@
     "@types/mocha": "^10.0.10",
     "@types/node": "20",
     "chai": "^6.2.0",
-    "esbuild": "^0.25.11",
+    "esbuild": "^0.25.12",
     "mocha": "^11.7.4",
     "mocha-web": "^2.4.0",
     "typescript": "~5.9.3"
