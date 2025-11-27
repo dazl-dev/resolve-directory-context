@@ -73,14 +73,14 @@ export function sortPackagesByDepth(packages: INpmPackage[]): INpmPackage[] {
     packages.map((npmPackage) => [
       npmPackage,
       flattenTree(npmPackage, (p) => Array.from(getDirectDepPackages(p, namedPackages))),
-    ])
+    ]),
   );
 
   const sortedPackages: INpmPackage[] = [];
 
   for (const npmPackage of packages) {
     const dependingPackageIdx = sortedPackages.findIndex((sortedPackage) =>
-      packageToDeepDeps.get(sortedPackage)!.has(npmPackage)
+      packageToDeepDeps.get(sortedPackage)!.has(npmPackage),
     );
     if (dependingPackageIdx === -1) {
       sortedPackages.push(npmPackage);

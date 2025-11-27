@@ -7,7 +7,7 @@ export interface ResolveWorkspacePackagesHost {
   readFileSync(filePath: string, encoding: 'utf8'): string;
   readdirSync(
     directoryPath: string,
-    options: { withFileTypes: true }
+    options: { withFileTypes: true },
   ): Iterable<{ name: string; isFile(): boolean; isDirectory(): boolean }>;
   dirname(path: string): string;
   relative(from: string, to: string): string;
@@ -17,7 +17,7 @@ export interface ResolveWorkspacePackagesHost {
 export function resolveWorkspacePackages(
   basePath: string,
   workspaces: string[],
-  host: ResolveWorkspacePackagesHost
+  host: ResolveWorkspacePackagesHost,
 ): INpmPackage[] {
   const packages = new Map<string, INpmPackage>();
 
@@ -26,14 +26,14 @@ export function resolveWorkspacePackages(
       basePath,
       (fileName) => fileName === PACKAGE_JSON,
       (directoryName) => !directoryName.startsWith('.') && directoryName !== 'node_modules',
-      host
-    )
+      host,
+    ),
   );
 
   for (const packageDirGlob of workspaces) {
     const packageJsonGlob = ensureEndsWithPackageJson(packageDirGlob);
     const packageJsonPaths = packageJsonFilePaths.filter((packageJsonPath) =>
-      minimatch(host.relative(basePath, packageJsonPath), packageJsonGlob)
+      minimatch(host.relative(basePath, packageJsonPath), packageJsonGlob),
     );
     for (const packageJsonPath of packageJsonPaths) {
       if (packages.has(packageJsonPath)) {
@@ -82,7 +82,7 @@ export function* deepFindFilesSync(
   directoryPath: string,
   filterFile: (fileName: string, filePath: string) => boolean = () => true,
   filterDirectory: (directoryName: string, directoryPath: string) => boolean = () => true,
-  host: ResolveWorkspacePackagesHost
+  host: ResolveWorkspacePackagesHost,
 ): Generator<string> {
   for (const item of host.readdirSync(directoryPath, { withFileTypes: true })) {
     const itemPath = host.join(directoryPath, item.name);

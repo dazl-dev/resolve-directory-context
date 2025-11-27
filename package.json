@@ -34,6 +34,7 @@
     "esbuild": "^0.27.0",
     "mocha": "^11.7.5",
     "mocha-web": "^2.5.1",
+    "prettier": "^3.7.1",
     "typescript": "~5.9.3"
   },
   "files": [

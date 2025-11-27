@@ -27,7 +27,7 @@ export interface DirectoryContextHost extends FindUpHost, ResolveWorkspacePackag
 
 export function resolveDirectoryContext(
   basePath: string,
-  host: DirectoryContextHost
+  host: DirectoryContextHost,
 ): SinglePackageContext | MultiPackageContext {
   const packageJsonPath = findFileUpSync(basePath, PACKAGE_JSON, host);
 
@@ -59,7 +59,7 @@ export function resolveDirectoryContext(
       type: 'multi',
       rootPackage,
       packages: sortPackagesByDepth(
-        resolveWorkspacePackages(directoryPath, extractPackageLocations(packageJson.workspaces), host)
+        resolveWorkspacePackages(directoryPath, extractPackageLocations(packageJson.workspaces), host),
       ),
     };
   }
@@ -73,7 +73,7 @@ export function resolveDirectoryContext(
         type: 'multi',
         rootPackage,
         packages: sortPackagesByDepth(
-          resolveWorkspacePackages(directoryPath, extractPackageLocations(lernaJson.packages), host)
+          resolveWorkspacePackages(directoryPath, extractPackageLocations(lernaJson.packages), host),
         ),
       };
     }

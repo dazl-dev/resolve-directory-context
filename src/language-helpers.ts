@@ -5,7 +5,7 @@ export const isPlainObject = (value: unknown): value is object =>
 export function flattenTree<T>(
   root: T,
   children: (node: T) => Iterable<T>,
-  predicate: (node: T) => boolean = (): boolean => true
+  predicate: (node: T) => boolean = (): boolean => true,
 ): Set<T> {
   const results = new Set<T>();
   const visited = new Set<T>();
