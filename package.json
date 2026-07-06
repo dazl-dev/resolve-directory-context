@@ -37,6 +37,10 @@
     "prettier": "^3.9.4",
     "typescript": "~6.0.3"
   },
+  "allowScripts": {
+    "@playwright/browser-chromium": true,
+    "esbuild": true
+  },
   "files": [
     "dist",
     "src"
