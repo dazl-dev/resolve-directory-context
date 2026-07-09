@@ -1,3 +1,3 @@
 export default {
-  pinnedPackages: [{ name: 'eslint', reason: 'waiting for typescript-eslint to support v10' }],
+  pinnedPackages: [{ name: 'typescript', reason: 'v7 requires changes from deps' }],
 };
