@@ -23,7 +23,7 @@
     "type-fest": "^5.8.0"
   },
   "devDependencies": {
-    "@file-services/memory": "^11.1.0",
+    "@file-services/memory": "^11.1.1",
     "@file-services/path": "^11.1.0",
     "@playwright/browser-chromium": "^1.61.1",
     "@ts-tools/esm": "^6.1.0",
